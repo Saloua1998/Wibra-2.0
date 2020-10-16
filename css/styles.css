@@ -2,7 +2,10 @@ button{
     border: 0px;
     padding: 0px;
 }
-body,header{
+body{
+    margin: 0px 50px;
+}
+header{
     margin: 0px;
     padding: 0px;
 }

@@ -4,7 +4,7 @@
     margin-left: auto;
     margin-right: auto;
 }
-header{
+header, footer{
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -19,9 +19,12 @@ header{
     border-top: 2px solid black;
     border-bottom: 2px solid black;
 }
-.Hbutton:hover,#searchicon{
+.Hbutton:hover,#searchicon,.Fbutton{
     opacity: 1;
     cursor: pointer;
+}
+.Hbutton:focus{
+    cursor: wait;
 }
 #searchbar{
     padding: 0px;
@@ -43,18 +46,46 @@ header{
     border: 2px solid black;
     border-left: 0px;
 }
-footer{
-    width: 100%;
-    display: flex;
-}
 .Fbutton{
     font-size: medium;
     font-weight: bolder;
     flex: 1 1 0px;
     height: 50px;
-    background-color: white;
 }
 .Fbutton:hover{
     text-decoration: underline;
-    cursor: pointer;
+}
+.Fbutton:focus{
+    cursor: wait;
+}
+.NieuwsBrief{
+    background-color: tomato;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 50px;
+}
+.NieuwsBrief h3{
+    margin-top: 0px;
+}
+#Nieuwsbriefipt{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+} 
+#Nieuwsbriefipt input{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+#Nieuwsbriefipt button{
+    height: 39px;
+    width: 50px;
+    background-image: linear-gradient(gray,rgb(250, 250, 250),gray);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
