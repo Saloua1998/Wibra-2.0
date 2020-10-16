@@ -1,19 +1,11 @@
-body,header{
-    margin: 0px;
-}
 #Logo{
     height:150px;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-#Header{
+header{
     width: 100%;
-    padding: 0px;
-    margin:0px;
-    display: flex;
-    align-items: flex-end;
-    flex-wrap: wrap;
     display: flex;
     justify-content: space-evenly;
 }
@@ -22,28 +14,47 @@ body,header{
     font-weight: bolder;
     flex: 1 1 0px;
     height: 50px;
-    border: 0px;
     background-image: linear-gradient(rgb(200, 200, 200),rgb(250, 250, 250), rgb(200, 200, 200));
     opacity: 0.8;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
 }
-.Hbutton:hover{
+.Hbutton:hover,#searchicon{
     opacity: 1;
+    cursor: pointer;
 }
 #searchbar{
-    margin: 0px;
     padding: 0px;
     padding-left: 10px;
     height: 46px;
     flex: 1 1 0px;
-    border: 0px;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
+    border: 2px solid black;
     text-align: left;
 }
 #searchicon{
-    width:50px;
+    font-size: large;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: gray;
+    height: 46px;
+    width: 40px;
+    border: 2px solid black;
+    border-left: 0px;
+}
+footer{
+    width: 100%;
+    display: flex;
+}
+.Fbutton{
+    font-size: medium;
+    font-weight: bolder;
+    flex: 1 1 0px;
     height: 50px;
-    background-color: transparent;
+    background-color: white;
+}
+.Fbutton:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }
