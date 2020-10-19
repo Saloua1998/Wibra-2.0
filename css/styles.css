@@ -9,3 +9,10 @@ header{
     margin: 0px;
     padding: 0px;
 }
+button:hover, a:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+button:focus{
+    cursor: wait;
+}

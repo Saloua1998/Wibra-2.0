@@ -4,6 +4,8 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+/* HEADER */
 header, footer{
     width: 100%;
     display: flex;
@@ -19,18 +21,30 @@ header, footer{
     border-top: 2px solid black;
     border-bottom: 2px solid black;
 }
-.Hbutton:hover,#searchicon,.Fbutton{
-    opacity: 1;
-    cursor: pointer;
+#Themabtn,#Actiesbtn,#Folderbtn{
+    font-size: medium;
+    font-weight: bolder;
+    flex: 0.5 0.5 0px;
+    height: 50px;
+    opacity: 0.8;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
 }
-.Hbutton:focus{
-    cursor: wait;
+#Themabtn{
+    background-color: gray;
+    color: white;
+}
+#Actiesbtn{
+    background-color: yellow;
+}
+#Folderbtn{
+    background-color: red;
+    color: white;
 }
 #searchbar{
-    padding: 0px;
     padding-left: 10px;
-    height: 46px;
-    flex: 1 1 0px;
+    height: 44px;
+    font-size: medium;
     border: 2px solid black;
     text-align: left;
 }
@@ -46,18 +60,24 @@ header, footer{
     border: 2px solid black;
     border-left: 0px;
 }
-.Fbutton{
-    font-size: medium;
-    font-weight: bolder;
+
+
+#Grid1{
+    display: flex;
+    flex-direction: row;
+    
     flex: 1 1 0px;
-    height: 50px;
 }
-.Fbutton:hover{
-    text-decoration: underline;
-}
-.Fbutton:focus{
-    cursor: wait;
-}
+
+/* #Grid1{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    justify-content: center;
+} */
+
+/* NIEUWSBRIEF */
 .NieuwsBrief{
     background-color: tomato;
     color: white;
@@ -88,4 +108,18 @@ header, footer{
     background-image: linear-gradient(gray,rgb(250, 250, 250),gray);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+}
+
+/* FOOTER */
+.Fbutton{
+    font-size: medium;
+    font-weight: bolder;
+    flex: 1 1 0px;
+    height: 50px;
+}
+.Fbutton:hover{
+    text-decoration: underline;
+}
+.Fbutton:focus{
+    cursor: wait;
 }
