@@ -1,81 +1,77 @@
 #Logo{
-    height:150px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0px auto;
 }
 
 /* HEADER */
 header, footer{
-    width: 100%;
     display: flex;
-    justify-content: space-evenly;
-}
-.Hbutton{
-    font-size: medium;
-    font-weight: bolder;
-    flex: 1 1 0px;
     height: 50px;
+}
+
+.Hbutton{
+    font: bolder 0.9rem Arial;
+    flex: 1 1 0px;
     background-image: linear-gradient(rgb(200, 200, 200),rgb(250, 250, 250), rgb(200, 200, 200));
     opacity: 0.8;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
 }
 #Themabtn,#Actiesbtn,#Folderbtn{
-    font-size: medium;
-    font-weight: bolder;
+    font: bolder 0.9rem Arial;
     flex: 0.5 0.5 0px;
-    height: 50px;
     opacity: 0.8;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
 }
 #Themabtn{
-    background-color: gray;
-    color: white;
+    background-color: rgb(150, 150, 150);
 }
 #Actiesbtn{
     background-color: yellow;
 }
 #Folderbtn{
-    background-color: red;
-    color: white;
+    background-color: rgb(255, 20, 20);
 }
 #searchbar{
     padding-left: 10px;
     height: 44px;
     font-size: medium;
     border: 2px solid black;
-    text-align: left;
 }
 #searchicon{
     font-size: large;
     color: white;
+    background-color: gray;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: gray;
     height: 46px;
     width: 40px;
     border: 2px solid black;
     border-left: 0px;
 }
 
-
-#Grid1{
+/* GRID1 */
+#Grid1, #Grid2{
     display: flex;
     flex-direction: row;
-    
-    flex: 1 1 0px;
-}
-
-/* #Grid1{
-    padding: 10px;
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 10px;
     justify-content: center;
-} */
+}
+#Grid1 #column{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+#Grid1 .items img{
+    padding: 5px;
+    width: 44vw;
+}
+/* GRID2 */
+#Grid2 .items img{
+    padding: 5px;
+    width: 29.2vw;
+}
 
 /* NIEUWSBRIEF */
 .NieuwsBrief{
@@ -85,41 +81,24 @@ header, footer{
     flex-direction: column;
     align-items: center;
     margin: 10px 50px;
-}
-.NieuwsBrief h3{
-    margin-top: 0px;
-}
-#Nieuwsbriefipt{
-    width: 25%;
-    display: flex;
-    justify-content: center;
-} 
-#Nieuwsbriefipt input{
-    width: 100%;
-    height: 100%;
-    margin-bottom: 20px;
     padding: 10px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+}
+#Nieuwsbriefipt{display: flex;} 
+#Nieuwsbriefipt input{
+    width: 15vw;
+    padding: 10px;
+    border-radius: 10px 0px 0px 10px;
 }
 #Nieuwsbriefipt button{
     height: 39px;
     width: 50px;
     background-image: linear-gradient(gray,rgb(250, 250, 250),gray);
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-radius: 0px 10px 10px 0px;
 }
 
 /* FOOTER */
 .Fbutton{
-    font-size: medium;
-    font-weight: bolder;
+    font: bolder 0.9rem Arial;
     flex: 1 1 0px;
-    height: 50px;
 }
-.Fbutton:hover{
-    text-decoration: underline;
-}
-.Fbutton:focus{
-    cursor: wait;
-}
+.Fbutton:hover{text-decoration: underline;}

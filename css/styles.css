@@ -16,3 +16,6 @@ button:hover, a:hover{
 button:focus{
     cursor: wait;
 }
+p{
+    margin: 0px;
+}
