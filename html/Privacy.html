@@ -1,6 +1,36 @@
 <!DOCTYPE html>
 <html>
 
+<script>
+    function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /*loop through a collection of all HTML elements:*/
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("page");
+            if (file) {
+                /*make an HTTP request using the attribute value as the file name:*/
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                        if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                        /*remove the attribute, and call this function once more:*/
+                        elmnt.removeAttribute("page");
+                        includeHTML();
+                    }
+                }
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                /*exit the function:*/
+                return;
+            }
+        }
+    };
+</script>
+
 <head>
     <title>Wibra</title>
     <link rel="stylesheet" href="../css/styles.css">
@@ -8,7 +38,6 @@
     <link rel="stylesheet" href="../css/Home.css">
     <link rel="stylesheet" href="../css/Privacy.css">
     <link rel="icon" href="https://wibra.eu/wp-content/uploads/2016/07/cropped-favicon-180x180.png">
-
 </head>
 
 <body>
@@ -16,29 +45,10 @@
         <img id="Logo" src="../images/logo.png" alt="Wibra icon">
     </a>
 
-    <!-- HEADER -->
-    <header class="navbar">
-        <div class="dropdown">
-            <a class="dropbtn">Kleren<i class="fas fa-caret-down"></i></a>
-            <div class="dropdown-content">
-                <a href="Dames.html">Dames</a>
-                <a href="Heren.html">Heren</a>
-                <a href="Kinderen.html">Kinderen</a>
-            </div>
-        </div>
-        <a href="Schoonmaak.html" class="Hbutton">Schoonmaak</a>
-        <a href="Verzorging.html" class="Hbutton">Verzorging</a>
-        <a href="Textiel.html" class="Hbutton">Textiel</a>
-        <a href="Hobby.html" class="Hbutton">Hobby</a>
-        <a href="Speelgoed.html" class="Hbutton">Speelgoed</a>
-        <a href="HuisTuin.html" class="Hbutton">Huis en Tuin</a>
-        <a href="Acties.html" id="Actiesbtn">Acties</a>
-        <a href="Folder.html" id="Folderbtn">Folder</a>
-        <input type="text" placeholder="zoek..." id="searchbar">
-        <a><i id="searchicon" class="fas fa-search"></i></a>
-    </header>
+    <!-- NAVBAR -->
+    <div page="navbar.html"></div>
 
-    <div class="Privacy">
+    <div class="Bod">
         <h1>Privacy statement</h1>
         <p>
             Wibra verzamelt via haar winkels, website, nieuwsbrieven, applicatie(s), acties en andere diensten,
@@ -281,14 +291,8 @@
     </div>
 
     <!-- FOOTER -->
-    <footer>
-        <a href="OverWibra.html" class="Fbutton">Over Wibra</a>
-        <a href="Filialen.html" class="Fbutton">Filialen</a>
-        <a href="Klantenservice.html" class="Fbutton">Klantenservice</a>
-        <a href="WerkenBij.html" class="Fbutton">Werken Bij</a>
-        <a href="Privacy.html" class="Fbutton">Privacy Statement</a>
-        <a href="Corona.html" class="Fbutton">Corona Maatregelen</a>
-    </footer>
+    <div page="footer.html"></div>
+    <script> includeHTML(); </script>
 </body>
 
 </html>

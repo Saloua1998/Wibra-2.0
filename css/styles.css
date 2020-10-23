@@ -1,8 +1,4 @@
-button{
-    border: 0px;
-    padding: 0px;
-}
-
+/* TAGS */
 body{margin: 0px 50px;}
 
 header{
@@ -10,14 +6,21 @@ header{
     padding: 0px;
 }
 
+table{
+    margin-top: 30px;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+button{
+    border: 0px;
+    padding: 0px;
+}
 button:hover, a:hover{
     opacity: 1;
     cursor: pointer;
 }
-
 button:focus{cursor: wait;}
-
-p{margin: 0px;}
 
 a{
     color: black;
@@ -25,7 +28,34 @@ a{
     border: 0px;
     padding: 0px;
 }
+
+p{margin: 0px;}
+
 h1,h2,h3,h4,p{
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 5px;
 }
+
+
+.Bod{
+    width: 80vw;
+    max-width: 1000px;
+    display: block;
+    text-align: justify;
+    margin: 30px auto;
+}
+
+.Ttitle{
+    border-radius: 5px 5px 0px 0px;
+    background-color: orangered;
+    color: white;
+    padding: 15px;
+}
+.Theader th{background-color: lightsalmon;}
+
+.Tbody td,.Theader th {
+    padding: 8px;
+    border-bottom: 1px solid #ddd; 
+  }
+  
+.Tbody:hover {background-color:#f3f3f3;}

@@ -1,40 +1,151 @@
 <!DOCTYPE html>
 <html>
 
+<script>
+    function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /*loop through a collection of all HTML elements:*/
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("page");
+            if (file) {
+                /*make an HTTP request using the attribute value as the file name:*/
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                        if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                        /*remove the attribute, and call this function once more:*/
+                        elmnt.removeAttribute("page");
+                        includeHTML();
+                    }
+                }
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                return;
+            }
+        }
+    };
+</script>
+
 <head>
     <title>Wibra</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/all.min.css">
-    <link rel="stylesheet" href="../css/Home.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/all.min.css">
+    <link rel="stylesheet" href="../../css/Home.css">
+    <link rel="stylesheet" href="../../css/corona.css">
     <link rel="icon" href="https://wibra.eu/wp-content/uploads/2016/07/cropped-favicon-180x180.png">
 </head>
 
 <body>
     <a href="Home.html">
-        <img id="Logo" src="../images/logo.png" alt="Wibra icon">
+        <img id="Logo" src="../../images/logo.png" alt="Wibra icon">
     </a>
 
-    <!-- HEADER -->
-    <header class="navbar">
-        <div class="dropdown">
-            <a class="dropbtn">Kleren<i class="fas fa-caret-down"></i></a>
-            <div class="dropdown-content">
-                <a href="Dames.html">Dames</a>
-                <a href="Heren.html">Heren</a>
-                <a href="Kinderen.html">Kinderen</a>
-            </div>
-        </div>
-        <a href="Schoonmaak.html" class="Hbutton">Schoonmaak</a>
-        <a href="Verzorging.html" class="Hbutton">Verzorging</a>
-        <a href="Textiel.html" class="Hbutton">Textiel</a>
-        <a href="Hobby.html" class="Hbutton">Hobby</a>
-        <a href="Speelgoed.html" class="Hbutton">Speelgoed</a>
-        <a href="HuisTuin.html" class="Hbutton">Huis en Tuin</a>
-        <a href="Acties.html" id="Actiesbtn">Acties</a>
-        <a href="Folder.html" id="Folderbtn">Folder</a>
-        <input type="text" placeholder="zoek..." id="searchbar">
-        <a><i id="searchicon" class="fas fa-search"></i></a>
-    </header>
+    <!-- NAVBAR -->
+    <div page="navbar.html"></div>
+
+    <!-- BODY -->
+    <div class="Bod">
+        <h1>Informatie Corona maatregelen</h1>
+        <p>
+            Vooralsnog zijn al onze winkels in Nederland geopend conform de normale openingstijden. Uiteraard houden we
+            de
+            ontwikkelingen rondom het coronavirus goed in de gaten.<br><br>
+
+            Voor Wibra staat de gezondheid van onze klanten en onze medewerkers op de eerste plaats. Daar waar nodig
+            zetten
+            we naast de normale hygiënemaatregelen extra maatregelen in. Verder volgen we hierbij de richtlijnen van het
+            RIVM en de GGD.<br><br>
+
+            Aan u ook de oproep om er alles aan te doen om de verspreiding van het coronavirus tegen te gaan. Volg
+            daarbij
+            de maatregelen die vanuit de overheid worden geadviseerd.
+        </p>
+
+        <h3>Maatregelen voor uw en onze gezondheid:</h3>
+
+        <ul style="font-family: Arial;margin:5px;">
+            <li>Houd minimaal 1,5 meter afstand</li>
+            <li>1 mand = 1 klant. Mandjes op? Even wachten alsjeblieft!</li>
+            <li>Kom alleen</li>
+            <li>Betaal met pin</li>
+            <li>Toch contant betalen? Vermijd handcontact</li>
+            <li>Winkel vlot zodat iedereen de gelegenheid krijgt om onze winkel te bezoeken</li>
+            <li>
+                Retourbeleid is aangepast. Als een winkel tijdelijk niet geopend is, heb je de mogelijkheid om de
+                aankoop binnen 14 dagen te retourneren nadat de winkel weer geopend is
+            </li>
+        </ul>
+        <p>Wij doen ons best u te helpen. Behandel onze medewerkers en elkaar met
+            respect!</p>
+
+        <table>
+            <tr>
+                <th class="Ttitle" colspan="2">
+                    Informatie per filiaal, staat uw filiaal hier niet bij dan is deze regulier geopend
+                </th>
+            </tr>
+            <tr class="Theader">
+                <th>Filiaal</th>
+                <th>Informatie</th>
+            </tr>
+            <tr class="Tbody">
+                <td>Amsterdam Noord</td>
+                <td>Koopavond komt te vervallen</td>
+            </tr>
+            <tr class="Tbody">
+                <td>Amsterdam Plein 40-45</td>
+                <td>Koopavond komt te vervallen</td>
+            </tr>
+            <tr class="Tbody">
+                <td>Berkel en Rodenrijs</td>
+                <td>Koopavond komt te vervallen</td>
+            </tr>
+            <tr class="Tbody">
+                <td>Emmerhout</td>
+                <td>Koopavond komt te vervallen</td>
+            </tr>
+            <tr class="Tbody">
+                <td>Hoorn</td>
+                <td>Koopavond komt te vervallen</td>
+            </tr>
+            <tr class="Tbody">
+                <td>IJmuiden</td>
+                <td>Koopavond komt te vervallen</td>
+            </tr>
+            <tr class="Tbody">
+                <td>Kerkrade</td>
+                <td>Koopavond komt te vervallen</td>
+            </tr>
+            <tr class="Tbody">
+                <td>Oosterbeek</td>
+                <td>Koopavond komt te vervallen</td>
+            </tr>
+            <tr class="Tbody">
+                <td>Rotterdam Lage Land</td>
+                <td>Sluit elke dag om 17.30 uur</td>
+            </tr>
+            <tr class="Tbody">
+                <td>Stadskanaal</td>
+                <td>Koopavond tot 20.00 uur</td>
+            </tr>
+            <tr class="Tbody">
+                <td>Vlaardingen</td>
+                <td>Koopzondag komen te vervallen</td>
+            </tr>
+            <tr class="Tbody">
+                <td>Weesp</td>
+                <td>Koopavond komt te vervallen</td>
+            </tr>
+            <tr class="Tbody">
+                <td style="border-bottom: 0px solid #ddd; ">Zaandam</td>
+                <td style="border-bottom: 0px solid #ddd; ">Koopavond komt te vervallen</td>
+            </tr>
+        </table>
+    </div>
 
     <!-- NIEUWSBRIEF -->
     <div class="NieuwsBrief">
@@ -48,14 +159,9 @@
     </div>
 
     <!-- FOOTER -->
-    <footer>
-        <a href="OverWibra.html" class="Fbutton">Over Wibra</a>
-        <a href="Filialen.html" class="Fbutton">Filialen</a>
-        <a href="Klantenservice.html" class="Fbutton">Klantenservice</a>
-        <a href="WerkenBij.html" class="Fbutton">Werken Bij</a>
-        <a href="Privacy.html" class="Fbutton">Privacy Statement</a>
-        <a href="Corona.html" class="Fbutton">Corona Maatregelen</a>
-    </footer>
+    <div page="footer.html"></div>
+
+    <script> includeHTML(); </script>
 </body>
 
 </html>

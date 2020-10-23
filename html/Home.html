@@ -1,146 +1,159 @@
 <!DOCTYPE html>
 <html>
 
+<script>
+    function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /*loop through a collection of all HTML elements:*/
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("page");
+            if (file) {
+                /*make an HTTP request using the attribute value as the file name:*/
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                        if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                        /*remove the attribute, and call this function once more:*/
+                        elmnt.removeAttribute("page");
+                        includeHTML();
+                    }
+                }
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                /*exit the function:*/
+                return;
+            }
+        }
+    };
+</script>
+
 <head>
     <title>Wibra</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/all.min.css">
-    <link rel="stylesheet" href="../css/Home.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/all.min.css">
+    <link rel="stylesheet" href="../../css/Home.css">
     <link rel="icon" href="https://wibra.eu/wp-content/uploads/2016/07/cropped-favicon-180x180.png">
 </head>
 
 <body>
     <a href="Home.html">
-        <img id="Logo" src="../images/logo.png" alt="Wibra icon">
+        <img id="Logo" src="../../images/logo.png" alt="Wibra icon">
     </a>
 
-    <!-- HEADER -->
-    <header class="navbar">
-        <div class="dropdown">
-            <a class="dropbtn">Kleren<i class="fas fa-caret-down"></i></a>
-            <div class="dropdown-content">
-                <a href="Dames.html">Dames</a>
-                <a href="Heren.html">Heren</a>
-                <a href="Kinderen.html">Kinderen</a>
+    <!-- NAVBAR -->
+    <div page="navbar.html"></div>
+
+    <div class="Grid">
+        <!-- GRID1 -->
+        <div id="Row1">
+            <div>
+                <a href="Folder.html">
+                    <img id="img2" src="https://wibra.eu/wp-content/uploads/2020/10/555x490-banner-19okt-hoofd1.png">
+                </a>
+                <a>
+                    <img id="img2" src="https://wibra.eu/wp-content/uploads/2020/10/555x386-banner-19okt-hoofd2.png">
+                </a>
+            </div>
+
+            <div>
+                <a>
+                    <img id="img2" src="https://wibra.eu/wp-content/uploads/2020/10/555x386-banner-19okt-hoofd1.png">
+                </a>
+                <a>
+                    <img id="img2" src="https://wibra.eu/wp-content/uploads/2020/10/555x490-banner-19okt-hoofd2.png">
+                </a>
             </div>
         </div>
-        <a href="Schoonmaak.html" class="Hbutton">Schoonmaak</a>
-        <a href="Verzorging.html" class="Hbutton">Verzorging</a>
-        <a href="Textiel.html" class="Hbutton">Textiel</a>
-        <a href="Hobby.html" class="Hbutton">Hobby</a>
-        <a href="Speelgoed.html" class="Hbutton">Speelgoed</a>
-        <a href="HuisTuin.html" class="Hbutton">Huis en Tuin</a>
-        <a href="Acties.html" id="Actiesbtn">Acties</a>
-        <a href="Folder.html" id="Folderbtn">Folder</a>
-        <input type="text" placeholder="zoek..." id="searchbar">
-        <a><i id="searchicon" class="fas fa-search"></i></a>
-    </header>
 
-    <!-- GRID1 -->
-    <div id="Row1">
-        <div>
-            <a href="Folder.html">
-                <img id="img2" src="https://wibra.eu/wp-content/uploads/2020/10/555x490-banner-19okt-hoofd1.png">
+        <!-- GRID2 -->
+        <div id="Row2">
+            <a>
+                <img id="img3" src="https://wibra.eu/wp-content/uploads/2020/10/App-banner-16okt-2.png">
             </a>
             <a>
-                <img id="img2" src="https://wibra.eu/wp-content/uploads/2020/10/555x386-banner-19okt-hoofd2.png">
+                <img id="img3" src="https://wibra.eu/wp-content/uploads/2020/10/App-banner-16okt-5.png">
+            </a>
+            <a>
+                <img id="img3" src="https://wibra.eu/wp-content/uploads/2020/10/App-banner-16okt-4.png">
             </a>
         </div>
 
-        <div>
-            <a>
-                <img id="img2" src="https://wibra.eu/wp-content/uploads/2020/10/555x386-banner-19okt-hoofd1.png">
-            </a>
-            <a>
-                <img id="img2" src="https://wibra.eu/wp-content/uploads/2020/10/555x490-banner-19okt-hoofd2.png">
-            </a>
-        </div>
-    </div>
-
-    <!-- GRID2 -->
-    <div id="Row2">
-        <a>
-            <img id="img3" src="https://wibra.eu/wp-content/uploads/2020/10/App-banner-16okt-2.png">
+        <a href="Folder.html">
+            <p style="font: bolder 2rem Arial; display: flex; justify-content: center;">
+                Bekijk hier onze nieuwe folder vol superdeals! #dasfijn
+            </p>
         </a>
-        <a>
-            <img id="img3" src="https://wibra.eu/wp-content/uploads/2020/10/App-banner-16okt-5.png">
-        </a>
-        <a>
-            <img id="img3" src="https://wibra.eu/wp-content/uploads/2020/10/App-banner-16okt-4.png">
-        </a>
-    </div>
 
-    <a>
-        <p style="font: bolder 2rem Arial; display: flex; justify-content: center;">
-            Bekijk hier onze nieuwe folder vol superdeals! #dasfijn
-        </p>
-    </a>
+        <!-- GRID3 -->
+        <div id="Col3">
+            <div>
+                <a>
+                    <img id="img4" src="https://wibra.eu/wp-content/uploads/2020/10/363x240-banner-19okt-actie1.png">
+                </a>
+                <a>
+                    <img id="img4" src="https://wibra.eu/wp-content/uploads/2020/10/363x240-banner-19okt-actie2.png">
+                </a>
+                <a>
+                    <img id="img4" src="https://wibra.eu/wp-content/uploads/2020/10/363x240-banner-19okt-actie3.png">
+                </a>
+                <a>
+                    <img id="img4" src="https://wibra.eu/wp-content/uploads/2020/10/363x240-banner-19okt-actie4.png">
+                </a>
+            </div>
+            <div>
+                <a>
+                    <img id="img1" src="https://wibra.eu/wp-content/uploads/2020/10/1130x277-Banner-19okt.png">
+                </a>
+            </div>
+            <div>
+                <a>
+                    <img id="img2" src="https://wibra.eu/wp-content/uploads/2020/10/555x369-banner-19okt-1.png">
+                </a>
+                <a>
+                    <img id="img2" src="https://wibra.eu/wp-content/uploads/2020/10/555x369-banner-50-beenmode.png">
+                </a>
+            </div>
+            <div>
+                <a>
+                    <img id="img2"
+                        src="https://wibra.eu/wp-content/uploads/2020/10/555x386_2x-banner-pink-ribbon-50ct-donatie.png">
+                </a>
+                <a>
+                    <img id="img2" src="https://wibra.eu/wp-content/uploads/2020/10/555x386_2x-banner-thermo-jeans.png">
+                </a>
+            </div>
+        </div>
 
-    <!-- GRID3 -->
-    <div id="Col3">
-        <div>
-            <a>
-                <img id="img4" src="https://wibra.eu/wp-content/uploads/2020/10/363x240-banner-19okt-actie1.png">
-            </a>
-            <a>
-                <img id="img4" src="https://wibra.eu/wp-content/uploads/2020/10/363x240-banner-19okt-actie2.png">
-            </a>
-            <a>
-                <img id="img4" src="https://wibra.eu/wp-content/uploads/2020/10/363x240-banner-19okt-actie3.png">
-            </a>
-            <a>
-                <img id="img4" src="https://wibra.eu/wp-content/uploads/2020/10/363x240-banner-19okt-actie4.png">
-            </a>
-        </div>
-        <div>
-            <a>
-                <img id="img1" src="https://wibra.eu/wp-content/uploads/2020/10/1130x277-Banner-19okt.png">
-            </a>
-        </div>
-        <div>
-            <a>
-                <img id="img2" src="https://wibra.eu/wp-content/uploads/2020/10/555x369-banner-19okt-1.png">
-            </a>
-            <a>
-                <img id="img2" src="https://wibra.eu/wp-content/uploads/2020/10/555x369-banner-50-beenmode.png">
-            </a>
-        </div>
-        <div>
-            <a>
-                <img id="img2"
-                    src="https://wibra.eu/wp-content/uploads/2020/10/555x386_2x-banner-pink-ribbon-50ct-donatie.png">
-            </a>
-            <a>
-                <img id="img2" src="https://wibra.eu/wp-content/uploads/2020/10/555x386_2x-banner-thermo-jeans.png">
-            </a>
-        </div>
-    </div>
-
-    <!-- GRID4 -->
-    <div id="Row4">
-        <div id="row1">
-            <a>
-                <img id="img3" src="https://wibra.eu/wp-content/uploads/2020/04/FB_363x171_NL.png">
-            </a>
-            <a>
-                <img id="img3" src="https://wibra.eu/wp-content/uploads/2020/04/INSTA_363x171_NL.png">
-            </a>
-        </div>
-        <div id=column1>
-            <a>
-                <img id="img3"
-                    src="https://wibra.eu/wp-content/uploads/2020/09/119780235_2730164537310392_7118483698334004279_n.jpg">
-            </a>
-            <div style="margin:10px; font-family:Arial">
-                <h1>Blij met Wibra?</h1>
-                <p>
-                    Word je ook blij van Wibra? Laat het ons weten via Instagram of Facebook.
-                    Maak een leuke foto en tag ons!
-                </p>
-                <button
-                    style="font: bolder 0.9rem Arial; background: black; color:white; padding:15px; margin:10px 0px">
-                    Bekijk hier meer
-                </button>
+        <!-- GRID4 -->
+        <div id="Row4">
+            <div id="row1">
+                <a>
+                    <img id="img3" src="https://wibra.eu/wp-content/uploads/2020/04/FB_363x171_NL.png">
+                </a>
+                <a>
+                    <img id="img3" src="https://wibra.eu/wp-content/uploads/2020/04/INSTA_363x171_NL.png">
+                </a>
+            </div>
+            <div id=column1>
+                <a>
+                    <img id="img3"
+                        src="https://wibra.eu/wp-content/uploads/2020/09/119780235_2730164537310392_7118483698334004279_n.jpg">
+                </a>
+                <div style="margin:10px; font-family:Arial">
+                    <h1>Blij met Wibra?</h1>
+                    <p>
+                        Word je ook blij van Wibra? Laat het ons weten via Instagram of Facebook.
+                        Maak een leuke foto en tag ons!
+                    </p>
+                    <button
+                        style="font: bolder 0.9rem Arial; background: black; color:white; padding:15px; margin:10px 0px">
+                        Bekijk hier meer
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -157,14 +170,9 @@
     </div>
 
     <!-- FOOTER -->
-    <footer>
-        <a href="OverWibra.html" class="Fbutton">Over Wibra</a>
-        <a href="Filialen.html" class="Fbutton">Filialen</a>
-        <a href="Klantenservice.html" class="Fbutton">Klantenservice</a>
-        <a href="WerkenBij.html" class="Fbutton">Werken Bij</a>
-        <a href="Privacy.html" class="Fbutton">Privacy Statement</a>
-        <a href="Corona.html" class="Fbutton">Corona Maatregelen</a>
-    </footer>
+    <div page="footer.html"></div>
+
+    <script> includeHTML(); </script>
 </body>
 
 </html>
