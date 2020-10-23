@@ -1,0 +1,17 @@
+.Sidebar{
+    display: flex;
+    flex-direction: row;
+    width: 80vw;
+    max-width: 1000px;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 5px;
+    background-color:orangered;  
+}
+.Sidebar a{
+    text-align: center ;
+    width: 25%;
+    padding: 10px;
+    color: white;
+    font: bolder 1rem Arial;
+}
