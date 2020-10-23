@@ -1,0 +1,12 @@
+footer{
+    display: flex;
+    max-height: 50px;
+    text-align: center;
+}
+.Fbutton{
+    font: bolder 0.9rem Arial;
+    flex: 1 1 0px;
+    padding: 20px;
+    background-color: rgb(220, 220, 220);
+}
+.Fbutton:hover{text-decoration: underline;}

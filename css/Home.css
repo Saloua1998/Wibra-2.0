@@ -1,102 +1,3 @@
-#Logo{
-    display: block;
-    margin: 0px auto;
-}
-
-/* DROPDOWN */
-.dropdown{
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 0px;
-}
-.dropbtn{
-    border-radius: 5px 0px 0px 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 50px;
-    flex: 1 1 0px;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
-    opacity: 0.8;
-    background-image: linear-gradient(rgb(200, 200, 200),rgb(250, 250, 250), rgb(200, 200, 200));
-    font: bolder 0.9rem Arial;
-    border-left: 2px solid black;
-}
-.dropdown-content {
-    position: relative;
-    min-width: 180px;
-    box-shadow: 0px 10px 15px 0px black;
-    display: none;
-  }
-  .dropdown-content a {
-    display: block;
-    font: bolder 0.9rem Arial;
-    color: black;
-    background-image: linear-gradient(rgb(200, 200, 200),rgb(250, 250, 250), rgb(200, 200, 200));
-    border: 1px solid black;
-    padding: 10px 20px;
-  }
-  .dropdown-content a:hover { background-color: #ddd; }
-  
-  .dropdown:hover .dropdown-content { display: block; }
-
-  /* HEADER */
-header, footer{
-    display: flex;
-    max-height: 50px;
-    text-align: center;
-}
-
-.Hbutton{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    font: bolder 0.9rem Arial;
-    opacity: 0.8;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
-    flex: 1 1 0px;
-    background-image: linear-gradient(rgb(200, 200, 200),rgb(250, 250, 250), rgb(200, 200, 200));
-}
-#Actiesbtn,#Folderbtn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    font: bolder 0.9rem Arial;
-    opacity: 0.8;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
-    flex: 0.5 0.5 0px;
-}
-#Actiesbtn{
-    background-color: yellow;
-}
-#Folderbtn{
-    background-color: rgb(255, 20, 20);
-}
-#searchbar{
-    padding-left: 10px;
-    height: 48px;
-    font-size: medium;
-    border: 2px solid black;
-}
-#searchicon{
-    border-radius: 0px 5px 5px 0px;
-    font-size: large;
-    color: white;
-    background-color: gray;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    width: 40px;
-    border: 2px solid black;
-    border-left: 0px;
-}
-
 /* Rows */
 #Row1, #Row2, #Col3 div,#Row4, #Row4 #column1{
     padding: 10px;
@@ -111,7 +12,6 @@ header, footer{
     flex-direction: column;
     justify-content: center;
 }
-img{padding: 5px;}
 
 /* 1 width */
 #img1,#item1{width:89vw;}
@@ -124,36 +24,3 @@ img{padding: 5px;}
 
 /* 1/4 width */
 #img4{width:21.8vw;}
-
-/* NIEUWSBRIEF */
-.NieuwsBrief{
-    border-radius: 10px;
-    background-color:orangered;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px 50px;
-    padding: 15px;
-}
-#Nieuwsbriefipt{display: flex;} 
-#Nieuwsbriefipt input{
-    width: 15vw;
-    padding: 10px;
-    border-radius: 10px 0px 0px 10px;
-}
-#Nieuwsbriefipt button{
-    height: 39px;
-    width: 50px;
-    background-image: linear-gradient(gray,rgb(250, 250, 250),gray);
-    border-radius: 0px 10px 10px 0px;
-}
-
-/* FOOTER */
-.Fbutton{
-    font: bolder 0.9rem Arial;
-    flex: 1 1 0px;
-    padding: 20px;
-    background-color: rgb(220, 220, 220);
-}
-.Fbutton:hover{text-decoration: underline;}

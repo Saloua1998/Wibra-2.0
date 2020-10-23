@@ -1,3 +1,31 @@
+#Logo{
+    display: block;
+    margin: 0px auto;
+}
+
+.Bod{
+    width: 80vw;
+    max-width: 1000px;
+    display: block;
+    text-align: justify;
+    margin: 30px auto;
+}
+
+.Ttitle{
+    border-radius: 5px 5px 0px 0px;
+    background-color: orangered;
+    color: white;
+    padding: 15px;
+}
+.Theader th{background-color: lightsalmon;}
+
+.Tbody td,.Theader th {
+    padding: 8px;
+    border-bottom: 1px solid #ddd; 
+  }
+  
+.Tbody:hover {background-color:#f3f3f3;}
+
 /* TAGS */
 body{margin: 0px 50px;}
 
@@ -35,27 +63,3 @@ h1,h2,h3,h4,p{
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 5px;
 }
-
-
-.Bod{
-    width: 80vw;
-    max-width: 1000px;
-    display: block;
-    text-align: justify;
-    margin: 30px auto;
-}
-
-.Ttitle{
-    border-radius: 5px 5px 0px 0px;
-    background-color: orangered;
-    color: white;
-    padding: 15px;
-}
-.Theader th{background-color: lightsalmon;}
-
-.Tbody td,.Theader th {
-    padding: 8px;
-    border-bottom: 1px solid #ddd; 
-  }
-  
-.Tbody:hover {background-color:#f3f3f3;}
