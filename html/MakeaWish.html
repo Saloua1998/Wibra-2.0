@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<script>
+    function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /*loop through a collection of all HTML elements:*/
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("page");
+            if (file) {
+                /*make an HTTP request using the attribute value as the file name:*/
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                        if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                        /*remove the attribute, and call this function once more:*/
+                        elmnt.removeAttribute("page");
+                        includeHTML();
+                    }
+                }
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                return;
+            }
+        }
+    };
+</script>
+
+<head>
+    <title>Wibra</title>
+    <link rel="stylesheet" href="../../css/overwibra.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/all.min.css">
+    <link rel="icon" href="https://wibra.eu/wp-content/uploads/2016/07/cropped-favicon-180x180.png">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <div page="Navbar.html"></div>
+
+    <div class="Sidebar">
+        <a href="OverWibra.html">
+            Ons Formule
+        </a>
+        <a href="Historie.html">
+            Historie
+        </a>
+        <a href="">
+            mvo
+        </a>
+        <a href="MakeaWish.html" style="background-color:rgb(230, 50, 0);">
+            Make-a-Wish en Wibra
+        </a>
+    </div>
+
+    <!-- BODY -->
+    <div class="Bod">
+
+        <h1>Make-A-Wish en Wibra</h1>
+        <p>
+            <strong>
+                Wibra draagt Make-A-Wish Nederland een warm hart toe. Sinds 2000 werken we samen met Make-A-Wish
+                Nederland. Deze stichting zet zich in om kinderen met een levensbedreigende ziekte een onvergetelijke
+                dag te bezorgen. Onderzoek toont aan dat het realiseren van een allerliefste wens jonge patiënten en hun
+                omgeving weer hoop en vertrouwen geeft, en blijvend impact heeft vanaf het moment van kennismaken tot
+                lang na de wensvervulling. Een supermooi en waardevol initiatief waar wij heel graag een steentje aan
+                bijdragen!
+            </strong><br><br>
+
+            <strong>Hoe?</strong><br>
+            Met de verkoop van onze speciale Wibra/Make-A-Wish bigshoppers. Verkrijgbaar in frisse kleuren: rood, groen,
+            blauw en zwart. Met leuke illustraties van vrolijke ideeën voor kinderwensen. De tekst op de tas zegt het
+            al:” Ik draag bij aan:een helikoptervlucht/een zwembad vol snoepjes/een rit in een racewagen/een mode show
+            in Milaan. Bij elk exemplaar die we verkopen gaat 30 eurocent naar Make-A-Wish! Met deze tas draag je niet
+            alleen bij aan een fijne dag voor zieke kinderen, maar draag je ook de boodschap van Make-A-Wish uit.
+            <br><br>
+
+            Daarnaast werken we mee aan diverse losse acties. Zo sponsoren we Make-A-Wish Nederland met het leveren van
+            pepernoten t.b.v. de jaarlijkse Actie Strooigoed van de stichting. Met deze actie kun je Make-A-Wish steunen
+            door zakjes kruidnoten te (ver)kopen. Een leuke activiteit tijdens de Sinterklaasperiode. Een periode waar
+            kinderwensen centraal staan. Wat is er mooier dan tijdens en rondom het Sinterklaasfeest te helpen met het
+            waarmaken van wensen. In 2019 heeft Make-A-Wish met deze actie maar liefst € 60.035,- weten op te halen. Een
+            fantastisch resultaat waar Wibra met het leveren van de pepernoten uiteraard graag aan heeft bijgedragen!
+            <br><br>
+
+            <strong>
+                Draag je Make-A-Wish Nederland ook een warm hart toe? Elke donatie van klein tot groot is welkom!
+                Klik hier om ook donateur te worden.
+            </strong><br><br>
+
+            <img src="https://wibra.eu/wp-content/uploads/2019/10/diap.jpg" style="border-radius: 5px;">
+        </p>
+    </div>
+
+    <!-- NIEUWSBRIEF -->
+    <div page="Nieuwsbrief.html"></div>
+
+    <!-- FOOTER -->
+    <div page="Footer.html"></div>
+
+    <script> includeHTML(); </script>
+</body>
+
+</html>

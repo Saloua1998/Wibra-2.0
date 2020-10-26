@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<script>
+    function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /*loop through a collection of all HTML elements:*/
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("page");
+            if (file) {
+                /*make an HTTP request using the attribute value as the file name:*/
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                        if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                        /*remove the attribute, and call this function once more:*/
+                        elmnt.removeAttribute("page");
+                        includeHTML();
+                    }
+                }
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                return;
+            }
+        }
+    };
+</script>
+
+<head>
+    <title>Wibra</title>
+    <link rel="stylesheet" href="../../css/overwibra.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/all.min.css">
+    <link rel="icon" href="https://wibra.eu/wp-content/uploads/2016/07/cropped-favicon-180x180.png">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <div page="Navbar.html"></div>
+
+    <div class="Sidebar">
+        <a href="OverWibra.html">
+            Ons Formule
+        </a>
+        <a href="Historie.html" style="background-color:rgb(230, 50, 0);">
+            Historie
+        </a>
+        <a href="">
+            mvo
+        </a>
+        <a href="MakeaWish.html">
+            Make-a-Wish en Wibra
+        </a>
+    </div>
+
+    <!-- BODY -->
+    <div class="Bod">
+        <h1>Historie</h1>
+
+        <h2>Een goed begin</h2>
+        <p>
+            Het is 1956. De heer J. Wierdsma start een winkel in Epe. Hij noemt de winkel ‘Wibra’, een combinatie van
+            zijn eigen achternaam en de meisjesnaam van zijn vrouw (Braam). De Heer Wierdsma zet zich persoonlijk in om
+            met een uniek aanbod te komen. Een groot succes van het eerste uur is dat mensen zelf de artikelen mogen
+            pakken uit de verkoopbakken, iets wat in die tijd niet gebruikelijk is.
+        </p>
+
+        <h2>Succes vraagt om uitbreiding</h2>
+        <p>
+            Deze betrokken, klantgerichte manier van ondernemen slaat aan: de zaken gaan goed. De stormloop op de
+            winkels is begonnen. Vele dames in Epe trotseren de kou en de sneeuw om koopjes in de wacht te slepen
+            tijdens de uitverkoop. Tijd voor uitbreiding dus. In 1967 wordt de winkel uitgebreid, met een grotere
+            verkoopruimte en meer magazijnruimte. Deze ruimte dient later ook als centraal magazijn voor de eerste vijf
+            filialen. In 1970 wordt een gloednieuw centraal magazijn geopend en al in 1973 is de 25e Wibra een feit!
+        </p>
+
+        <h2>De beroemde folders</h2>
+        <p>
+            In 1977 krijgt Jo Wierdsma het lumineuze idee om de Wibra-advertenties te vervangen door
+            huis-aan-huisfolders. De eerste oplage bedraagt 102.000 stuks. Anno nu verspreiden we in Nederland en België
+            om de twee weken circa 6 miljoen folders, waar onze klanten echt naar uitkijken. Wibra is een begrip
+            geworden!
+        </p>
+
+        <h2>Van 1978 tot nu</h2>
+        <p>
+            In 1978 neemt Wibra in Epe een nieuw centraal magazijn met kantoorruimte in gebruik. Dit complex is nog
+            steeds onze thuisbasis. En ook al werken er na ruim een halve eeuw zo’n 2700 Wibra medewerkers in ongeveer
+            300 filialen in Nederland en België en blijven we groeien: we zijn nog steeds een familiebedrijf. En we doen
+            er alles aan om de unieke sfeer die daarbij hoort te behouden!
+        </p>
+    </div>
+
+    <!-- NIEUWSBRIEF -->
+    <div page="Nieuwsbrief.html"></div>
+
+    <!-- FOOTER -->
+    <div page="Footer.html"></div>
+
+    <script> includeHTML(); </script>
+</body>
+
+</html>
