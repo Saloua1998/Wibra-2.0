@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html>
+
+<script>
+    function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /*loop through a collection of all HTML elements:*/
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("page");
+            if (file) {
+                /*make an HTTP request using the attribute value as the file name:*/
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                        if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                        /*remove the attribute, and call this function once more:*/
+                        elmnt.removeAttribute("page");
+                        includeHTML();
+                    }
+                }
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                return;
+            }
+        }
+    };
+</script>
+
+<head>
+    <title>Wibra</title>
+    <link rel="stylesheet" href="../../css/mvo.css">
+    <link rel="stylesheet" href="../../css/overwibra.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/all.min.css">
+    <link rel="icon" href="https://wibra.eu/wp-content/uploads/2016/07/cropped-favicon-180x180.png">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <div page="Navbar.html"></div>
+
+    <div class="Sidebar">
+        <a href="OverWibra.html">
+            Ons Formule
+        </a>
+        <a href="Historie.html">
+            Historie
+        </a>
+        <a href="mvo.html" style="background-color:rgb(230, 50, 0);">
+            mvo
+        </a>
+        <a href="MakeaWish.html">
+            Make-a-Wish en Wibra
+        </a>
+    </div>
+
+    <!-- BODY -->
+    <div class="Bod">
+        <h1>mvo</h1>
+        <img style="width: 100%;" src="https://wibra.eu/wp-content/uploads/2019/06/Wibra-Banner-MVO-1-525x204.png">
+
+        <h2>Wibra en maatschappelijk verantwoord ondernemen (MVO)</h2>
+        <p>
+            Bij Wibra vinden we het belangrijk om voorzichtig om te gaan met de wereld waarin we leven. In onze winkels
+            in Nederland en België verkopen we producten die uit andere landen komen. Vaak ver weg en met andere
+            gewoontes. Dit brengt ook risico’s met zich mee. We werken er hard aan om op de hoogte te blijven van alles
+            wat er speelt en willen negatieve effecten van onze manier van werken zoveel mogelijk te beperken.
+
+            Hieronder lees je alles over:
+        </p>
+        <div id="refgrid">
+            <div>
+                <h2>Onze Ambities ></h2><br>
+                <p>
+                    Als familiebedrijf kijken we niet alleen naar deze generatie maar juist naar de volgende generatie
+                </p>
+                <input class="refBtn" value="Lees meer over ambities" type="button"
+                    onClick="document.getElementById('Ambities').scrollIntoView();" />
+            </div>
+            <div>
+                <h2>Van Ontwerp tot Verkoop ></h2><br>
+                <p>
+                    We willen verantwoordelijkheid nemen in de hele toeleveringsketen
+                </p>
+                <input class="refBtn" value="Lees meer over ambities" type="button"
+                    onClick="document.getElementById('Ontwerp').scrollIntoView();" />
+            </div>
+            <div>
+                <h2>Duurzame ambities komen tot leven ></h2><br>
+                <p>
+                    In 2019 en 2020 zijn er grote stappen gezet in het verder integreren van het IMVO beleid binnen
+                    Wibra
+                </p>
+                <input class="refBtn" value="Lees meer over ambities" type="button"
+                    onClick="document.getElementById('Duurzaam').scrollIntoView();" />
+            </div>
+            <div>
+                <h2>Dit hebben we gedaan ></h2><br>
+                <p>
+                    Alleen samen gaan we erin slagen onze duurzame doelen te behalen
+                </p>
+                <input class="refBtn" value="Lees meer over ambities" type="button"
+                    onClick="document.getElementById('Gedaan').scrollIntoView();" />
+            </div>
+            <div>
+                <h2>Hier gaan we mee aan de slag ></h2><br>
+                <p>
+                    We hebben prioriteiten gesteld op basis van de ernst en de waarschijnlijkheid
+                </p>
+                <input class="refBtn" value="Lees meer over ambities" type="button"
+                    onClick="document.getElementById('Prioriteit').scrollIntoView();" />
+            </div>
+            <div>
+                <h2>Onze MVO doelstellingen ></h2><br>
+                <p>
+                    Samen groeien naar een meer duurzame industrie waar iedereen van kan profiteren
+                </p>
+                <input class="refBtn" value="Lees meer over ambities" type="button"
+                    onClick="document.getElementById('Doelen').scrollIntoView();" />
+            </div>
+        </div>
+
+        <h1 id="Ambities">Onze ambities</h1>
+        <p>
+            Maatschappelijk Verantwoord Ondernemen (MVO) is niet een op zichzelf staand onderdeel in onze organisatie.
+            We willen duurzaamheid zo volledig mogelijk integreren in ons gehele beleid, doen en laten. Voor zowel top
+            management als fabrieksmedewerker. Iedereen telt mee omdat we alleen samen de gewenste doelen kunnen
+            behalen. We geloven in een gezonde toekomst voor de mode industrie. We kijken heel kritisch naar onszelf,
+            ons eigen handelen en hoe we dit beter kunnen doen. Due diligence is een proces waarin Wibra de
+            daadwerkelijke en mogelijke negatieve impact van ons handelen identificeren, voorkomen en verminderen en
+            verantwoording afleggen over hoe wij omgaan met de geïdentificeerde risico’.<br><br>
+
+            We staan open voor kritiek en vragen onze stakeholders met ons mee te denken. Soms betekent dit dat er
+            moeilijke afwegingen gemaakt moeten worden. Als familiebedrijf kijken we niet alleen naar deze generatie
+            maar juist naar de volgende generatie. We geloven dat dit de kracht van Wibra is. We willen zowel het goede
+            oude behouden en het goede nieuwe implementeren. We willen een krachtige structuur neerzetten voor een nieuw
+            verdienmodel, waarin ruimte is voor zowel nieuwe als oude waarden. We willen toewerken naar een circulaire
+            economie, minder afval produceren, slim omgaan met voorraden en verspilling tegengaan.
+            <br><br>
+            <img style="width: 100%;" src="https://wibra.eu/wp-content/uploads/2020/09/image.png">
+            <br><br>
+            Bij Wibra hanteren we duidelijke kernwaarden in de omgang met onze klanten, tussen de collega’s onderling en
+            in de omgang met onze leveranciers. We tonen echt <strong>RESPECT</strong> voor de ander, communiceren
+            helder en <strong>TRANSPARANT</strong> en zijn <strong>GEDREVEN</strong> en gemotiveerd om persoonlijke en
+            zakelijke doelen te halen. We stellen ons ten doel het
+            elke dag beter te doen en we steken het plezier dat we in ons werk hebben niet onder stoelen of banken. Een
+            glimlach kost tenslotte niets.
+            <br><br>
+            We hebben <strong>DUURZAAM</strong> als kernwaarde toegevoegd. Duurzaam betekent goed voor mens, milieu en
+            dier. Het betekent ook dat we geen afbreuk doen aan de mogelijkheden van toekomstige generaties om in hun
+            behoeften te voorzien. We willen dat de volgende generaties net zoals wij van onze planeet kunnen genieten.
+            We zijn niet van de ene op de andere dag duurzaam en hechten veel waarde aan hoe men Wibra kent: betaalbaar
+            voor iedereen. Maar we willen ook mee met de tijd en de consument duurzaam laten kopen bij Wibra.
+        </p>
+
+        <br>
+        <h1 id="Ontwerp">Van ontwerp tot verkoop</h1>
+        <p>
+            Wibra maakt eigen productontwerpen en die laten we maken door onze leveranciers, alles onder onze eigen
+            merknaam Wibra. De prijs wordt vastgesteld n.a.v. een tevoren gemaakte kostprijsberekening. De leverancier
+            koopt de materialen in. Levertijden worden zodanig bepaald, dat eventuele piekperiodes bij de producent
+            zoveel mogelijk worden vermeden.
+        </p>
+
+        <div>
+            <h3>Ketenverantwoordelijkheid</h3>
+            <p>
+                We willen verantwoordelijkheid nemen in de hele toeleveringsketen. De OESO-richtlijnen verplichten
+                bedrijven om na te gaan in hoeverre ze betrokken zijn bij misstanden op het gebied van mensenrechten,
+                milieu of dierenwelzijn. Dit wordt ook wel due diligence genoemd. Door het ondertekenen van het
+                Convenant Duurzame Kleding en Textiel heeft Wibra zich ook verplicht om die verantwoordelijkheid te
+                nemen. We willen een zo volledig mogelijk beeld krijgen van onze keten en eventuele negatieve impact
+                opsporen, reduceren en compenseren.
+                <br><br>
+                Met het grote aantal leveranciers waarmee wij werken – in totaal zo’n 120 leveranciers- is dit een
+                moeilijke taak. We hebben ons dan ook voorgenomen dit aantal in 2021 met 10% te verminderen en met 25%
+                in 2025. We produceren voornamelijk in China (41%), Bangladesh (33%), Turkije en India (beide 7%) en in
+                geringere mate in Pakistan (4%), Indonesië (2%), Italië (2%), Egypte, Polen, Portugal en Duitsland
+                (samen 1%).
+                <br><br>
+            </p>
+        </div>
+        <img src="https://wibra.eu/wp-content/uploads/2020/09/image-1.png">
+
+        <h3>Sustainable Development Goals (SDG’s)</h3>
+        <p>
+            Dit zijn zeventien doelen om van de wereld een betere plek te maken. Deze 17 SDG’s zijn vastgelegd door
+            de landen die zijn aangesloten bij de Verenigde Naties (VN), waaronder Nederland. De doelen kwamen er op
+            basis van inbreng van organisaties en individuen uit de hele wereld.
+            <br><br>
+            De Duurzame Ontwikkelingsdoelen gelden vanaf 2015 en moeten behaald zijn in 2030. Ze zijn bedoeld om
+            uitdagingen aan te pakken als armoede, onderwijs en de klimaatcrisis. Wij richten ons voornamelijk op
+            SDG 12: verantwoorde consumptie en productie. We willen zorgen voor duurzaam beheer en efficiënt gebruik
+            van natuurlijke hulpbronnen. Het produceren van goederen moet met het oog op de groeiende
+            wereldbevolking veel handiger: meer produceren met minder. Dit is ook in lijn met de circulaire
+            economie: onze focus ligt daarom ook op duurzame materialen.
+        </p>
+
+        <img src="https://wibra.eu/wp-content/uploads/2020/09/image-2.png"><br><br>
+
+        <h3>Onze stakeholders</h3>
+        <p>
+            Samen staan we sterk. We zijn ervan overtuigd dat we samen de wereld een betere plek kunnen maken.
+            Verduurzamen en transparantie creëren doen wij samen met onze stakeholders. Wij stimuleren samenwerking en
+            gaan het dialoog aan. We wisselen kennis uit en vragen om advies.
+            <br><br>
+            Onze stakeholders zijn:
+            <li>Onze medewerkers</li>
+            <li>Leveranciers en agenten</li>
+            <li>Consumenten</li>
+            <li>
+                NGO’s, vakbonden, brancheorganisaties zoals Modint en Inretail, alle partijen binnen het
+                Textielconvenant
+            </li>
+            <li>Familie Wibra</li>
+        </p>
+
+        <h3>Onze medewerkers</h3>
+        <p>
+            Bij Wibra werken ongeveer 90% vrouwen en 10% mannen. We overleggen en horen graag waar onze mensen tegenaan
+            lopen en hoe wij hierin kunnen helpen. We willen een aantrekkelijke werkgever zijn met energieke, betrokken
+            en trotse medewerkers. Alleen met betrokken medewerkers kunnen we immers onze duurzame ambities bereiken.
+        </p>
+
+        <h3>Leveranciers en agenten</h3>
+        <p>
+            We werken met 120 leveranciers, traders en importeurs. Omdat Wibra geen eigen kantoren heeft in het Verre
+            Oosten, maken we gebruik van lokale agenten die daar onze belangen behartigen. Zij houden zich onder andere
+            bezig met kwaliteitscontrole en naleving van lokale wet- en regelgeving. We zien onze leveranciers en
+            agenten als partners en we bespreken onze gezamenlijke belangen met hen.
+        </p>
+
+        <h3>Consumenten</h3>
+        <p>
+            Onze (potentiële) klanten zijn onze belangrijkste stakeholders. We willen goede en verantwoord geproduceerde
+            kleding en textiel voor zo veel mogelijk mensen toegankelijk maken. De vraag naar duurzame materialen en
+            collecties wordt alsmaar groter. Wibra probeert aan deze vraag te voldoen door duurzame collecties te
+            brengen, waarin zowel rekening gehouden wordt met de duurzaamheid van gebruikte materialen, als van de
+            verpakkingen.
+        </p>
+
+        <h3>NGO’s: FNV, CNV, BSCI, Arisa, Fair Wear Foundation (FWF)</h3>
+        <p>
+            De partijen zoals werknemersvereniging FNV en CNV, Arisa, BSCI en FWF die zich inzetten om
+            arbeidsomstandigheden in de keten te verbeteren, zijn van cruciaal belang voor Wibra. We zien deze
+            stakeholders dan ook als partners van Wibra. We vragen ze actief mee te denken, onze risicoanalyse mee te
+            analyseren en onze doelstellingen te prioriteren. Vaak hebben deze NGO’s de nieuwste kennis en inzichten en
+            kunnen ze actief meedenken om ons verder te helpen met ons beleid op het gebied van maatschappelijk
+            verantwoord ondernemen (MVO).
+        </p>
+
+        <h3>Convenant deelnemer sinds 2017</h3>
+        <p>
+            Begin 2017 hebben we het Convenant Duurzame Kleding en Textiel ondertekend. Bedrijven en organisaties die
+            het convenant ondertekenen, verplichten zich om discriminatie, kinderarbeid en gedwongen arbeid tegen te
+            gaan. Ook zetten zij zich in voor het recht op vrije onderhandelingen door onafhankelijke vakbonden, een
+            leefbaar loon, en gezonde en veilige werkomstandigheden voor werknemers. Verder doen ze hun best om de
+            negatieve milieueffecten van hun activiteiten te verminderen, dierenleed te voorkomen, het verbruik van
+            water, energie en chemicaliën te beperken en minder chemisch afval en afvalwater te produceren.
+            <br><br>
+            De samenwerking binnen het Convenant geeft ons de steun en de kennis die we nodig hebben om de
+            doelstellingen te behalen. Aan het Convenant nemen meer dan 90 textiel labels/merken, NGO’s, de Nederlandse
+            Overheid, maatschappelijke organisaties en vakbonden deel.
+        </p>
+
+        <h3>Modint en Inretail</h3>
+        <p>
+            We zijn lid van de brancheorganisaties Modint en Inretail. We maken gebruik van hun expertise en
+            vakinhoudelijke kennis. Daarnaast hebben we via Modint een externe consultant in de arm genomen om ons
+            verder te helpen bij het invulling geven aan ons duurzaamheidsbeleid.
+        </p>
+
+        <h3>amfori BSCI</h3>
+        <p>
+            Om een nog beter gesprek te kunnen voeren met onze buitenlandse toeleveranciers, heeft Wibra zich
+            aangesloten bij het amfori Business Social Compliance Initiative (BSCI). De ruim 2300 bij BSCI aangesloten
+            leden werken samen met producenten aan actuele sociale en milieu gerelateerde onderwerpen.
+            <br><br>
+            Bij fabrieken worden onafhankelijke audits uitgevoerd en verbeterplannen opgesteld. BSCI biedt fabrieken
+            kosteloos trainingen aan en voert dialoog met belanghebbenden zoals NGO’s, vakbonden,
+            consumentenorganisaties, overheden, onderwijsinstellingen en media. Het werk van amfori BSCI is gebaseerd op
+            belangrijke internationale standaarden ter bescherming van arbeidsrechten, zoals International Labour
+            Organization (ILO) en Organization for Economic Cooperation and Development (OECD) richtlijnen.
+        </p>
+
+        <h3>Bangladesh Akkoord/RSC</h3>
+        <p>
+            Door de instorting van het 8 verdiepingen tellende Rana Plaza, werd duidelijk dat veel textielfabrieken in
+            Bangladesh onveilig waren. In 2013 heeft Wibra het Bangladesh Akkoord ondertekend, waarin afspraken staan
+            over het uitvoeren van onafhankelijke controle op de veiligheid van textielfabrieken in dat land. Doel van
+            de controles en de op basis daarvan gegeven opdrachten tot verbeteringen, is het vergroten van de veiligheid
+            op de werkplek. In 2018 hebben we ook de verlenging van dit Akkoord getekend. In Bangladesh werkt Wibra
+            alleen met fabrieken die meewerken aan de verbeterplannen van het Akkoord. Op 1 juni 2020 is het Bangladesh
+            Akkoord overgenomen door RMG Sustainability Council in Bangladesh (RSC) en zet het werk voort.
+        </p>
+
+        <img src="https://wibra.eu/wp-content/uploads/2020/09/image-3.png">
+
+        <h3>Familie Wibra</h3>
+        <p>
+            Wibra is van oorsprong een familiebedrijf en hoewel de familie Wibra geen deel uitmaakt van de huidige
+            directie, is ze nog altijd zeer betrokken bij het reilen en zeilen van de organisatie.
+        </p>
+
+        <br>
+        <h1 id="Duurzaam">Onze duurzame ambities komen tot leven</h1>
+        <p>
+            In 2019 en 2020 zijn er grote stappen gezet in het verder integreren van het IMVO beleid binnen Wibra. De
+            MVO activiteiten zijn opgeschaald naar de gehele inkoopafdeling en de gehele interne organisatie.
+            <br><br>
+            We hebben ons gefocust op interne bewustwording en mogelijkheden voor Wibra op het gebied van duurzaamheid.
+            Onze inkopers hebben er naast de functie van inkoper een dimensie bij gekregen, namelijk het thema
+            maatschappelijk verantwoord ondernemen. We hebben een maatschappelijk verantwoord inkoopbeleid opgesteld,
+            waarin overzichtelijk staat wat er van iedereen wordt verwacht.
+        </p>
+
+        <h3>Covid-19</h3>
+        <p>
+            De effecten van de coronacrisis hebben ook binnen de mode-industrie voor de nodige veranderingen gezorgd. We
+            doen inmiddels mee in het ‘nieuwe werken’ en hebben een andere inrichting op kantoor en in de winkels. In de
+            winkels in Nederland houden we 1,5 meter afstand, zijn er spatschermen geplaatst en zijn mandjes verplicht.
+            In België worden daarnaast mondkapjes gebruikt.
+            <br><br>
+            Wibra streeft naar langdurige zakenrelaties met haar leveranciers en we vinden het belangrijk dat iedereen
+            een goede en veilige werkplek heeft. We staan in nauw contact met onze leveranciers en houden in onze
+            planning rekening met tijdelijke sluiting vanwege een landelijke lockdown, en met beperkte bezetting van
+            fabrieken. In goed overleg met de leveranciers zijn enkele orders geannuleerd, waarvoor nog geen materialen
+            waren ingekocht. Betalingen aan leverancier in het Verre Oosten hebben gewoon plaatsgevonden als altijd.
+            Inmiddels is -ook weer in goed overleg met onze partners – een aantal doorgeschoven orders weer naar voren
+            gehaald.
+            <br><br>
+            We hebben een vragenlijst naar al onze leveranciers gestuurd om te achterhalen welke preventieve
+            gezondheidsmaatregelen in de fabriek genomen zijn om de covid-19 infectie te voorkomen. Veel van onze
+            fabrikanten geven aan dat de temperatuur wordt gemeten voordat de werknemers de fabriek inlopen, mondkapjes
+            verplicht zijn, handen extra vaak gewassen worden, wc’s vaker schoongemaakt worden, mensen op anderhalve
+            meter van elkaar werken en, in groepen, op verschillende tijdstippen lunchen, er Covid-19 posters zijn
+            opgehangen, etc. Op de vraag wat de directe negatieve impact voor de fabrieken is geweest, gaven de meesten
+            aan dat zij geen nadelige gevolgen hebben ondervonden van het handelen van Wibra. Sommigen geven wel aan dat
+            ze minder orders ontvangen hebben dan vorig jaar.
+        </p>
+
+        <br>
+        <h1 id="Gedaan">Dit hebben we gedaan</h1>
+        <h3>In onze organisatie – duurzaamheid omarmen</h3>
+        <p>
+            Onze duurzame ambitie gaat leven in de hele organisatie. Dit is belangrijk, want alleen samen gaan we erin
+            slagen onze duurzame doelen te behalen.
+        </p>
+
+        <h3>In onze collectie – meer duurzame materialen</h3>
+        <p>
+            Omdat een groot deel van onze impact op de natuur voortkomt uit onze materiaalkeuze, hebben we
+            doelstellingen vastgelegd op het gebruik van duurzame materialen. Duurzame materiaalkeuze heeft betrekking
+            op SDG 12: duurzame productie en consumptie, SDG 14: leven onder water en SDG 15: leven op het land. In 2020
+            hebben we 5% duurzame katoen ingekocht. Zodra de biologisch katoenen artikelen in de winkel komen, zullen we
+            dit goed communiceren. Ook voor de komende jaren hebben we doelstellingen opgesteld:
+        </p>
+
+        <h3>Met onze leveranciers – nieuwe duurzame afspraken</h3>
+        <p>
+            We hebben een Responsible Business Conduct (RBC) opgesteld, dat ons beleid op het gebied van verantwoord
+            ondernemen beschrijft. De RBC is een gedragscode die concreet de normen en waarden beschrijft voor Wibra en
+            de partners in de keten. Al onze leveranciers wordt gevraagd ervoor te tekenen dat zij van de inhoud
+            kennisgenomen hebben en de standaarden willen volgen. Tijdens werkbezoeken (als dit weer mag) en via
+            mailcontact blijven wij hierover in gesprek met de leveranciers. Hierbij wordt ook besproken, of het
+            handelen van Wibra het naleven van de normen en waarden in de weg staat. In het kader van de UNGP’s en de
+            OESO-richtlijnen dragen ondernemingen de verantwoordelijkheid voor het voorkomen en verminderen van
+            negatieve gevolgen voor mens en milieu, door hun eigen bedrijfsvoering of die van zakelijke relaties in de
+            productie- of toeleveringsketen. Dit betekent dat ieder moet handelen op een ethische en transparante
+            manier, die bijdraagt aan de gezondheid en het welzijn van de samenleving. Dit is de basis voor ons due
+            diligence-beleid dat is geïntegreerd in ons beleid voor maatschappelijk verantwoord ondernemen. Wibra
+            ondersteunt de conventies van de Internationale Arbeidsorganisatie (ILO) en verwacht van leveranciers dat
+            zij in overeenstemming hiermee handelen. Deze conventies zijn, samen met de relevante VN-verklaringen en de
+            OESO-richtlijnen, de basis voor ons verantwoord ondernemen.
+            <br><br>
+            In overleg met belanghebbenden hebben wij negen thema’s bepaald die op dit moment met voorrang aandacht
+            verdienen van Nederlandse bedrijven, die internationaal werken in de kleding- en textielsector. Dit zijn, in
+            willekeurige volgorde, de thema’s:
+        <ol>
+            <li>Discriminatie en geslacht</li>
+            <li>Kinderarbeid</li>
+            <li>Dwangarbeid</li>
+            <li>Vrijheid van vereniging</li>
+            <li>Leefbaar loon</li>
+            <li>Veiligheid en gezondheid op de werkplek</li>
+            <li>Grondstoffen</li>
+            <li>Waterverontreiniging en gebruik van chemicaliën, water en energie</li>
+            <li>Dierenwelzijn</li>
+        </ol>
+
+        <p>Op basis van ILO- en OESO-richtlijnen voor kleding- en schoenenindustrie, hebben wij hieraan toegevoegd: </p>
+        <ul>
+            <li>Werktijden</li>
+            <li>Ethische handel, geen omkoping en corruptie</li>
+            <li>Geen seksuele intimidatie en seksueel en gender geweld (SGBV) op de werkplek</li>
+            <li>Klachtenmechanisme</li>
+        </ul>
+        </p>
+
+        <h3>Klachtenprocedure</h3>
+        <p>
+            Met het opzetten van een External Grievance Mechanism wil Wibra een platform bieden aan werknemers in onze
+            productieketen en betrokken organisaties, om een klacht in te dienen als zij vinden dat zij nadeel
+            ondervinden van het handelen van Wibra. Al onze leveranciers hebben uitleg over de procedure ontvangen, met
+            het verzoek deze intern te delen.
+            <br><br>
+            Dit klachtenmechanisme is gebaseerd op de UN Guiding Principles on Business and Human Rights “Protect,
+            Respect and Remedy” Framework voor buitengerechtelijke klachtenprocedures.
+        </p>
+
+        <h3>Traceerbaarheid</h3>
+        <p>
+            Om mogelijke negatieve effecten van ons handelen in kaart te brengen en aan te pakken, is het noodzakelijk
+            te weten waar onze producten worden gemaakt. We werken samen met onze leveranciers aan de traceerbaarheid,
+            tot en met de katoenvelden toe. Sommige leveranciers aarzelen om hun bronnen bekend te maken, omdat deze
+            informatie gevoelig kan zijn voor concurrentie. Vaak wordt niet begrepen waarom we deze gegevens opvragen en
+            soms zijn deze (deels) niet bekend. Vanuit onze lange-termijn-relatie en door het onderhouden van dialoog en
+            het bieden van trainingen, willen we onze leveranciers het vertrouwen geven dat de informatie bij ons veilig
+            is.
+            <br><br>
+            We hebben voor 95% inzichtelijk waar onze artikelen in elkaar genaaid worden (tier 1) en krijgen ook steeds
+            meer inzicht in de herkomst van de gebruikte materialen. Om alle productielocaties in kaart te brengen, zijn
+            we leveranciers bij orderplaatsing gaan vragen de beoogde productielocatie(s) te vermelden. Onze agenten ter
+            plaatse zullen er toezicht op houden dat productie ook daadwerkelijk op de opgegeven locatie(s) plaatsvindt.
+        </p>
+
+        <h3>Ons chemicaliën beleid</h3>
+        <p>
+            Aangezien onze producten direct op de huid worden gedragen willen we dat deze vrij zijn van gevaarlijke
+            chemicaliën en veilig in gebruik zijn. Al onze producten voldoen aan de REACH-vereisten (registratie,
+            evaluatie, autorisatie en beperking van chemicaliën). REACH (EC 1907/2006) heeft tot doel de bescherming van
+            de menselijke gezondheid en het milieu te verbeteren, door tijdig te waarschuwen voor mogelijke schade door
+            chemische stoffen. Zo weten we zeker dat onze producten vrij zijn van schadelijke stoffen die een
+            gezondheidsrisico vormen en dat er men optimaal van kan genieten.
+            <br><br>
+            We hebben samen met een chemische expert van Modint een op maat gemaakte lijst van beperkt toegestane
+            stoffen (RSL) gemaakt, op basis van de REACH-voorschriften. De RSL is samen met de Responsible Business
+            Conduct (RBC) verstuurd naar leveranciers, met het verzoek het RSL-document te verspreiden onder ververijen,
+            drukkerijen en wasserijen waarmee zij werken, en leveranciers van grondstoffen en verpakkingen.
+        </p>
+
+        <h3>Kritisch op onze eigen inkooppraktijken</h3>
+        <p>
+            De manier waarop wij handelen heeft invloed op de gehele keten. Als wij dit doen zonder goed overleg in de
+            keten, is het mogelijk dat dit onbedoelde risico’s meebrengt, die we juist proberen te
+            verminderen/elimineren. Om ‘kritisch zijn op onze eigen inkooppraktijken’ ook echt in het beleid op te
+            nemen, hebben we een maatschappelijk verantwoord inkoopbeleid opgesteld, dat omschrijft hoe due diligence
+            wordt toegepast en geborgd.
+        </p>
+
+        <br>
+        <h1 id="Prioriteit">Hier gaan we mee aan de slag</h1>
+        <p>
+            Om de mogelijke risico’s van ons ondernemen op te sporen en in perspectief te plaatsen, hebben we een
+            risicoanalyse gemaakt. Hieruit komt naar voren wat de grootste risico’s zijn, die in onze bedrijfsvoering en
+            in de keten voorkomen. Onze analyse hebben we kritisch laten beoordelen door en besproken met stakeholders
+            zoals CNV, FNV, BSCI, Unicef, Arisa en Modint.
+        </p>
+
+        <h3>Methode</h3>
+        <p>
+            We hebben prioriteiten gesteld op basis van de ernst en de waarschijnlijkheid. De waarschijnlijkheid van
+            risico’s wordt bepaald door de reële kans dat deze risico’s zich voordoen. Tot de waarschijnlijke risico’s
+            behoren bijvoorbeeld het gebruik van schadelijke pesticiden in de katoenteelt en het ontbreken van vrijheid
+            van vakvereniging in China en Bangladesh. Deze risico’s zijn immers eerder regel dan uitzondering.
+        </p>
+
+        <h3>Risicoanalyse productielanden</h3>
+        <p>
+            Wibra produceert voor 41% in China, 33% in Bangladesh en 7% in zowel India als Turkije. Elk van deze landen
+            heeft zijn eigen cultuur, wetten en normen en waarden. We hebben elk land afzonderlijk onderzocht, om te
+            begrijpen welke risico’s voor mens en milieu zich voordoen. We hebben een grondige risicoanalyse gemaakt op
+            basis van 9 thema’s. De hoogte van het risico wordt aangegeven met een markering, waarbij A zeer laag risico
+            en E zeer hoog risico is. We kunnen niet alle risico’s in één keer aanpakken, maar samen met onze
+            leveranciers proberen we positieve stappen te zetten.
+        </p>
+
+        <div>
+            <img src="https://wibra.eu/wp-content/uploads/2020/09/image-4.png"><br>
+            <sub>
+                Note: geen markering betekent niet dat er geen risico is, maar dat er niet voldoende informatie is om
+                deze
+                juist te beoordelen.
+            </sub>
+        </div>
+
+        <h3>Sectorrisico’s</h3>
+        <p>
+            Een aantal belangrijke kenmerken uit de kledingindustrie maakt het risico op bepaalde arbeids- en
+            mensenrechtenschendingen groter. Denk aan laaggeschooldheid, arbeidsintensieve productieprocessen en korte
+            doorlooptijden. Ook de materialen die worden gebruikt in producten en productieprocessen in verschillende
+            stadia van het productieproces, verhogen het risico op bepaalde milieuschade. Gevaarlijke chemische stoffen
+            worden bijvoorbeeld wel bij het verven van stoffen worden gebruikt, maar niet bij het naaien van de
+            artikelen. In China en Turkije, en in lichtere mate Bangladesh en India, komt genderongelijkheid vaak voor
+            en in alle landen ontbreekt de vrijheid van vakvereniging vaker wel dan niet. Onze eisen en minimale normen
+            op het gebied van deze 9 thema’s hebben we beschreven in onze Responsible Business Conduct (RBC).
+        </p>
+
+        <h3>Risico’s op productielocatie niveau</h3>
+        <p>
+            55% van onze kleding en textiel is geproduceerd door leveranciers die een onafhankelijke social audit hebben
+            gehad. Dit kan BSCI, SA8000 of SMETA zijn. Van de onafhankelijk beoordeelde leveranciers hebben we een
+            grondige auditanalyse gemaakt om te zien wat er in onze eigen toeleveringsketen gebeurt.
+        </p>
+
+        <h3>Self assessment van BSCI</h3>
+        <p>
+            We zijn bezig met een onafhankelijke audit te regelen bij al onze fabrieken. Ondertussen blijven we
+            samenwerken met fabrieken die nog geen onafhankelijke sociale audit hebben gehad. De fabrieken in verband
+            met corona niet bezocht kunnen worden, willen we een self assesment laten doen van BSCI.
+        </p>
+
+        <h3>Ontvangen klachten in 2019</h3>
+        <p><em>Turkije</em></p>
+        <p>
+            In december 2018 ontvingen we een klacht dat een van onze leveranciers de oprichting van een vakbond zou
+            tegenhouden. We hebben over deze kwestie op verschillende manieren contact gehad met de leverancier. De zaak
+            ligt nog altijd bij de rechtbank; de hoop is dat behandeling ter zitting half september zal plaatsvinden.
+            Wibra sluit zich aan bij het project van FNV/CNV AMPLIFY, om meer te leren over de vrijheid van
+            vakvereniging om hier nog beter aan te kunnen bijdragen.
+        </p><br>
+
+        <p><em>India</em></p>
+        <p>
+            In mei 2019 heeft Arisa in Tamil Nadu, India, onderzoek gedaan waaruit risico’s naar voren kwamen die kleven
+            aan het door fabrieken aanbieden van slaapaccommodatie, en het ontbreken van mogelijkheden om klachten in te
+            dienen.
+            <br><br>
+            In dit onderzoek werden 4 fabrieken genoemd waar Wibra in 2018 heeft laten produceren. Wibra heeft besloten
+            niet meer samen te werken met deze leveranciers.
+        </p><br>
+
+        <p><em>Bangladesh</em></p>
+        <p>
+            In december heeft de Schone Kleren Campagne een zorgelijke situatie in Bangladesh aangekaart. Na stakingen
+            door werknemers in de kledingindustrie in december 2018 en januari 2019, zijn veel mensen ontslagen en zijn
+            er zelfs aangiften gedaan tegen (groepen) medewerkers.
+            <br><br>
+            De genoemde fabrieken in Bangladesh waar Wibra aan gelinkt kon worden, produceerden voor importeurs waar
+            Wibra vorig jaar inkocht. Wij hebben geen rechtstreekse banden met deze fabrieken en doen inmiddels geen
+            zaken meer met deze importeurs.
+        </p><br>
+
+        <p><em>China</em></p>
+        <p>
+            In april 2019 publiceerde LeidenAsiaCentre een rapport waaruit naar voren kwam dat kleding van westerse
+            merken die in Nederlandse winkels ligt, onder andere wordt gemaakt door Noord-Koreaanse arbeiders.
+            <br><br>
+            Omdat Wibra liet produceren in de provincie Liaoning, in de grensregio van China en Noord Korea, bestond de
+            verdenking dat ook onze leveranciers werkten met Noord-Koreaanse gevangenen. Uit onderzoek is gebleken dat
+            er geen productie voor Wibra plaatsvindt in het aan de Noord-Koreaanse grens gelegen Dandong. Zowel de
+            inkopers als de leveranciers in de bewuste regio is dringend verzocht ons altijd te informeren als productie
+            wordt overwogen in het grensgebied van Noord-Korea, of in fabrieken die met Noord-Koreaanse werknemers
+            werken.
+        </p><br>
+
+        <h3>Ernst en waarschijnlijkheid matrix</h3>
+        <p>
+            In deze matrix zie je per land de meest ernstige en meest waarschijnlijke risico’s in onze keten. Dit is een
+            combinatie van landenrisico’s en risico’s die uit de audit rapporten en ontvangen klachten naar voren komen.
+            We hebben onze conclusies geverifieerd met de stakeholders en waar nodig aangepast.
+        </p>
+        <img src="https://wibra.eu/wp-content/uploads/2020/09/image-6.png">
+        <ul>
+            <li>China: eerlijke vergoeding, veilige en gezonde arbeidsomstandigheden en aantasting milieu</li>
+            <li>Bangladesh: discriminatie, kinderarbeid en veilige en gezonde arbeidsomstandigheden</li>
+            <li>Turkije: eerlijke vergoeding, discriminatie en vrijheid van vakvereniging</li>
+            <li>India: eerlijke vergoeding, discriminatie en veilige en gezonde arbeidsomstandigheden</li>
+        </ul>
+        <p>
+            Onze overige productielanden hebben we beoordeeld en besproken met stakeholders, maar vallen voor nu buiten
+            de meest ernstige en meest waarschijnlijke risico’s die Wibra zal aanpakken in 2020.
+        </p>
+
+        <h3>Water, energie en chemicaliën (wet processing)</h3>
+        <p>
+            Een belangrijk risico dat afkomstig is uit productielanden is het waterverbruik en de vervuiling, het hoge
+            energieverbruik en het gebruik van gevaarlijke chemische stoffen. Aangezien katoen ons belangrijkste
+            materiaal is, staan de risico’s die daarmee samenhangen hoog op onze prioriteitenlijst.
+            <br><br>
+            Wibra wil zorg dragen voor een duurzame planeet. Het klimaat verandert doordat de temperatuur op aarde
+            stijgt. Opwarming is niet te stoppen, maar gaat minder hard als we wereldwijd minder CO2 uitstoten. Voor de
+            productie van kleding wordt veel water, energie en chemicaliën verbruikt.
+            <br><br>
+            Dit komt voornamelijk voor in de processen zoals het verven, printen, wassen en afwerken van materialen. Ook
+            voor het verbouwen van katoen is veel water nodig. Wij willen gaan onderzoeken hoe we het gebruik van water,
+            chemicaliën en energie kunnen verminderen in het productieproces van katoen en de afwerking hiervan.
+        </p>
+
+        <h3>Risico’s door materiaalverbruik</h3>
+        <p>
+            Ons belangrijkste gebruikte materiaal is katoen (77%). De teelt van katoen wordt beschouwd als een van de
+            meest vervuilende gewassen en wordt in meer dan honderd landen ter wereld geproduceerd.
+            <br><br>
+            De impact van de productie van katoen op het milieu is sterk afhankelijk van de teeltpraktijken en de lokale
+            omstandigheden. Katoen is een waterintensief gewas, dat tijdens de teelt enorm veel extra water nodig heeft.
+            Gemiddeld is er voor het verbouwen van een kilo katoen 2120 liter water nodig. Katoen is goed voor 16% van
+            de wereldwijde uitstoot van insecticiden, meer dan welk ander gewas ook. Verder wordt op elke hectare katoen
+            bijna 1 kilo gevaarlijke pesticiden gebruikt. De grote hoeveelheid pesticiden en meststoffen die nodig zijn
+            om een hoge katoenopbrengst te behouden, sijpelen in de grond en vervuilen het grond- en oppervlaktewater.
+            Vooral in landen waar katoen met de hand wordt geplukt, kan onveilig gebruik van landbouwchemicaliën
+            gevolgen hebben voor de gezondheid van de werknemers in het veld.
+        </p>
+        <img src="https://wibra.eu/wp-content/uploads/2020/09/image-7.png">
+
+        <br>
+        <h1 id="Doelen">Onze MVO doelstellingen</h1>
+        <p>
+            Bij het uitvoeren van deze risicoanalyse hebben we prioriteiten gesteld voor onderwerpen die urgenter zijn,
+            waar we meer invloed hebben en/of we direct invloed kunnen uitoefenen. Wibra werkt hard aan een duurzame
+            toekomst. We zijn geen duurzaam bedrijf, maar we leren en ondernemen actief om de voetafdruk die we
+            achterlaten te verkleinen. We doen het stap voor stap, werken aan de relatie met onze leveranciers en
+            groeien samen naar een meer duurzame industrie waar iedereen van kan profiteren.
+            <br><br>
+            Onze doelstellingen stap voor stap:
+        <ol>
+            <li>Veilige en gezonde arbeidsomstandigheden in China, Bangladesh en India</li>
+            <li>Eerlijke lonen in China</li>
+            <li>Aandeel milieuvriendelijke materialen verhogen</li>
+            <li>Geen discriminatie in Bangladesh, Turkije en India</li>
+            <li>Vrijheid van vakvereniging stimuleren in Turkije</li>
+            <li>Onafhankelijke sociale audit verhogen</li>
+            <li>Reduceren verpakkingsmaterialen</li>
+            <li>Traceerbaarheid keten vergroten</li>
+            <li>Continue ketenrisico analyseren</li>
+            <li>Verminderen van het water-, chemicaliën- en energiegebruik</li>
+        </ol>
+        </p>
+
+        <ol>
+            <h3>
+                <li>Veilige en gezonde arbeidsomstandigheden in China, Bangladesh en India</li>
+            </h3>
+            <p>
+                Uit onze risicoanalyse is naar voren gekomen dat veilige en gezonde arbeidsomstandigheden in deze landen
+                onder druk staan. We willen zorgen voor een veilige en hygiënische werkomgeving. Door hier een
+                doelstelling met bijbehorende acties op te stellen kunnen wij de situatie op dit gebied in onze supply
+                chain verbeteren. Het percentage leveranciers met onafhankelijke audits zullen we verhogen en risico’s
+                die uit de rapporten naar voren komen gezamenlijk met de leveranciers aanpakken.
+            </p>
+            <h3>
+                <li>Leefbare lonen in China</li>
+            </h3>
+            <p>
+                Wibra heeft leefbaar loon hoog op de agenda staan en gaat met hulp van o.a. amfori binnen het consortium
+                van het convenant aan leefbaar loon werken. Leefbaar loon is het geldbedrag dat nodig is om in de
+                basisbehoeften te voorzien en ligt vaak hoger dan het minimumloon in productielanden. Het idee is door
+                werknemers een leefbaar loon te betalen, excessief overwerk afneemt en kinderen bijvoorbeeld naar school
+                kunnen in plaats van te moeten werken in de fabriek. Uit onze risicoanalyse is naar voren gekomen dat er
+                zeer waarschijnlijk risico’s liggen op leefbare lonen. Hoewel dit niet allemaal uit de onafhankelijke
+                sociale audits naar voren komt (behalve in China), zijn de risico’s groter in de landen waar wij
+                produceren. We zien tegelijkertijd dat overwerk een groot risico is in al onze onafhankelijk
+                gecertificeerde productielocaties in China. We hebben een focus op China, ivm onze leverage en relatie
+                met leveranciers, en zullen in de loop der tijd het geleerde ook toepassen in onze overige
+                productielanden waar dit risico zich voordoet. Om het gesprek aan te kunnen gaan, zullen alle Wibra
+                inkopers en MVO medewerkers leefbaar loon trainingen gaan volgen.
+            </p>
+
+            <h3>
+                <li>Aandeel milieuvriendelijke materialen verhogen</li>
+            </h3>
+            <p>
+                We onderzoeken momenteel hoe we de hoeveelheid duurzame materialen in onze collectie kunnen vergroten.
+                Voor elke productgroep stellen we duidelijke doelen. We bespreken met onze leveranciers de mogelijkheden
+                om de gestelde doelen voor duurzame materialen haalbaar te maken.
+            </p>
+
+            <h3>
+                <li>Geen discriminatie in Bangladesh, Turkije en India</li>
+            </h3>
+            <p>
+                Discriminatie wordt niet getolereerd bij rekrutering, beloning, toegang tot opleiding, promotie,
+                beëindiging van de arbeidsrelatie of pensionering, op basis van geslacht, leeftijd, religie, ras, kaste,
+                geboorte, sociale achtergrond, handicap, etnische en nationale afkomst, nationaliteit, lidmaatschap van
+                werknemers organisaties, waaronder vakbonden, politieke overtuiging of meningen, seksuele geaardheid,
+                familie verantwoordelijkheden, burgerlijke staat of enige andere voorwaarde die tot discriminatie zou
+                kunnen leiden. Uit onze risicoanalyse is naar voren gekomen dat dit risico met name in Bangladesh,
+                Turkije en India zeer waarschijnlijk aanwezig is.
+                <br><br>
+                Met FNV en CNV gaan we samenwerken in een project waarmee we in onze fabrieken in Bangladesh, Turkije en
+                India een actieve bijdrage willen leveren op het gebied van tegengaan van discriminatie.
+            </p>
+
+            <h3>
+                <li>Vrijheid van vakvereniging stimuleren in Turkije</li>
+            </h3>
+            <p>
+                Uit een van onze ontvangen klachten is naar voren gekomen dat er een probleem is met betrekking tot
+                vrijheid van vakvereniging in Turkije. Wij willen dit graag verder oppakken samen met een projectgroep
+                vanuit de SER, georganiseerd door CNV en FNV.
+            </p>
+
+            <h3>
+                <li>Onafhankelijke sociale audit verhogen tier 1</li>
+            </h3>
+            <p>
+                Op dit moment zijn nog niet al onze leveranciers onafhankelijk sociaal ge-audit. Wij willen deelname aan
+                dit onafhankelijke systeem promoten en waar nodig meefinancieren. We willen inzicht in onze keten
+                verbeteren en onze productie locaties helpen met het uitvoeren van de verbeterplannen die ze opstellen
+                naar aanleiding van de audit rapporten. Fabrieken die vanwege corona niet door auditeurs bezocht kunnen
+                worden, zullen we een BSCI self assessment laten doen.
+            </p>
+
+            <h3>
+                <li>Reduceren verpakkingsmaterialen</li>
+            </h3>
+            <p>
+                Ondanks dat dit niet terugkomt uit onze risicoanalyse, willen wij onze negatieve impact op het milieu
+                verminderen waar we zelf directe invloed hebben. Dit is in lijn met onze duurzame waarde als
+                familiebedrijf. Zo komen onze pyjama’s met een minimum aan verpakkingsmaterialen (geen plastic/polybag)
+                in de winkel te liggen. We gebruiken zo min mogelijk plastic tassen meer in onze winkels en bieden onze
+                klanten herbruikbare shoppers aan. We geloven dat we door kritisch te kijken, te testen en in dialoog te
+                treden met onze stakeholders, een positieve bijdrage kunnen leveren aan het plastic afval probleem. We
+                zullen analyseren hoeveel verpakkingsmateriaal we op dit moment gebruiken en met leveranciers in gesprek
+                gaan hoe we dit kunnen verminderen.
+            </p>
+
+            <h3>
+                <li>Traceerbaarheid keten vergroten</li>
+            </h3>
+            <p>
+                We hebben momenteel de productielocaties inzichtelijk van tier 1 (naaien) en gedeeltelijk van tier 2
+                (gebruikte materialen) en 3 (grondstoffen waar de materialen van gemaakt zijn). Om te weten waar zich
+                ernstige en waarschijnlijke risico’s voordoen in de gehele productieketen, is het essentieel om te weten
+                waar onze producten gemaakt worden, tot diep in de keten. Dit betekent dat wij onze producten willen
+                herleiden tot de grondstof, het katoengewas, en willen weten waar de schapen grazen die onze wol
+                leveren. Dit is niet altijd gemakkelijk, omdat CMT leveranciers zelf niet altijd weten waar hun
+                grondstof vandaan komt, of ons om concurrentieredenen deze informatie niet graag willen geven. Wij
+                streven naar 100% ketentransparantie.
+                <br><br>
+                We willen ons leveranciersbestand in 2021 met 10 % verkleinen en ervoor zorgen dat de overblijvende
+                leveranciers doordrongen zijn van het belang van transparantie.
+            </p>
+
+            <h3>
+                <li>Continue ketenrisico analyseren</li>
+            </h3>
+            <p>
+                Met de leveranciers die nog geen onafhankelijk sociale audit hebben laten verrichten gaan we komend jaar
+                in overleg, om ervoor te zorgen dat al onze leveranciers door onafhankelijke partijen beoordeeld kunnen
+                worden. Ook zullen we elk jaar per leverancier een nieuwe risico inventarisatie maken, nieuwe
+                auditrapporten analyseren, verbeterpunten bespreken en indien nodig extra audits aanvragen.
+            </p>
+
+            <h3>
+                <li>Verminderen van het water-, chemicaliën- en energiegebruik </li>
+            </h3>
+            <p>
+                Op dit moment onderzoeken we hoe we het gebruik van water, chemicaliën en energie kunnen verminderen in
+                het productieproces van katoen en de afwerking hiervan. Want als we geen chemicaliën gebruiken in ons
+                productieproces, dan zit het ook niet in ons eindproduct. Door onderzoek hebben we geleerd dat we een
+                grote stap kunnen zetten om dit te verminderen door digitaal te printen in plaats van conventioneel
+                (traditioneel zeefdrukken). Digitale printers gebruiken minder water (ongeveer 60% minder), energie
+                (ongeveer 30% minder) en chemicaliën (ongeveer 70% minder) dan conventionele printers. Omdat het
+                verbruik per leverancier en machine verschilt, hebben we nog geen exacte cijfers. We zullen dit nader
+                onderzoeken. Ook zullen we natuurlijke kleurstoffen implementeren in Oekotex gecertificeerde fabrieken,
+                om het gebruik van chemicaliën en van water en energie te verminderen.
+                <br><br>
+                Sommige van onze leveranciers maken gebruik van groene energie (zonnepanelen) en hebben een
+                recirculatiesysteem voor (afval)water. Waterrecirculatie is het proces waarbij hetzelfde water meer dan
+                eens in een systeem wordt gebruikt, waardoor er minder chemicaliën in de waterwegen terechtkomen. Ook
+                onderzoeken we samen met andere leveranciers de mogelijkheden van groene energie en gerecirculeerde
+                watersystemen.
+            </p>
+        </ol>
+
+        <h3>Overige doelen</h3>
+        <p>Ook op het hoofdkantoor en in de winkels willen we zo duurzaam mogelijk te werk gaan.Met focus op:</p>
+        <ul>
+            <li>Minder papier gebruik</li>
+            <li>Minder plastic gebruik</li>
+            <li>Scheiden van afval</li>
+            <li>Minder energieverbruik</li>
+            <li>LED verlichting</li>
+            <li>Duurzamere winkels</li>
+            <li>Duurzaam logistiek beleid</li>
+        </ul>
+
+    </div>
+
+    <!-- NIEUWSBRIEF -->
+    <div page="Nieuwsbrief.html"></div>
+
+    <!-- FOOTER -->
+    <div page="Footer.html"></div>
+
+    <script> includeHTML(); </script>
+</body>
+
+</html>

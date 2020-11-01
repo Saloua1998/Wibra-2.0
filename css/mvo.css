@@ -1,0 +1,28 @@
+#refgrid{
+    display: grid; 
+    grid-template-columns: auto auto ;
+    margin-top: 20px;
+}
+
+#refgrid div{
+    border: 1px solid black;
+    padding: 0px 20px 20px 20px;
+    border-radius: 5px;
+    margin:5px;
+    background-color: rgb(230, 230, 230);
+}
+
+.refBtn{
+    background-color: black;
+    color: white;
+    width: 100%;
+    border-radius: 50px;
+    margin-top: 10px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.refBtn:hover{
+    background-color:rgb(50, 50, 50);
+    cursor: pointer;
+}
