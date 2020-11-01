@@ -1,20 +1,101 @@
 <!DOCTYPE html>
 <html>
 
+<script>
+    function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /*loop through a collection of all HTML elements:*/
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("page");
+            if (file) {
+                /*make an HTTP request using the attribute value as the file name:*/
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                        if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                        /*remove the attribute, and call this function once more:*/
+                        elmnt.removeAttribute("page");
+                        includeHTML();
+                    }
+                }
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                /*exit the function:*/
+                return;
+            }
+        }
+    };
+</script>
+
 <head>
+    <title>Wibra</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/all.min.css">
     <link rel="stylesheet" href="../css/nieuwsbrief.css">
+    <link rel="icon" href="https://wibra.eu/wp-content/uploads/2016/07/cropped-favicon-180x180.png">
 </head>
 
 <body>
-    <div class="NieuwsBrief">
-        <h2>MELD JE NU AAN VOOR ONZE NIEUWSBRIEF</h2>
-        <h3>Als eerste op de hoogte van al onze folderaanbieding en andere speciale
-            voordeelacties? Dat kan!</h3>
-        <form id="Nieuwsbriefipt">
-            <input type="email" placeholder="Vul hier je e-mailadres in">
-            <button type="submit"><i class="fas fa-chevron-right"></i></button>
+    <!-- NAVBAR -->
+    <div page="Navbar.html"></div>
+
+    <div class="Bod">
+        <h1>Aanmelden Nieuwsbrief</h1>
+        <form action="/nieuwsbrief.php">
+            <p>Nieuwsbrief keuze*</p>
+            <input type="radio" name="language" value="Nederlands">
+            <label for="Nederlands">Nederlands</label><br>
+            <input type="radio" name="language" value="Vlaams">
+            <label for="Vlaams">Vlaams</label><br>
+            <input type="radio" name="language" value="Waals">
+            <label for="Waals">Waals</label><br><br>
+
+            <label for="email">E-mailadres</label><br>
+            <input type="email" name="email"><br>
+            <label for="voornaam">Voornaam</label><br>
+            <input type="text" name="voornaam"><br>
+            <label for="achternaam">Achternaam</label><br>
+            <input type="text" name="achternaam"><br>
+            <label for="geslacht">Geslacht</label><br>
+            <input type="text" name="geslacht"><br>
+            <label for="woonplaats">Woonplaats</label><br>
+            <input type="text" name="woonplaats"><br>
+
+            <label for="verjaardag">Verjaardag</label><br>
+            <input type="date" name="verjaardag">
+
+            <h3>Toestemming gebruik gegevens</h3>
+            <p>
+                Wibra gebruikt de gegevens die je op dit formulier verstrekt om nieuws, acties en aanbiedingen per
+                e-mail met je te delen. Aan de hand van je persoonlijke gegevens kunnen wij je daarnaast voorzien van
+                informatie die voor jou relevant is. We zullen je gegevens met respect behandelen. Met deze aanmelding
+                stem je ermee in dat wij je gegevens mogen verwerken in overeenstemming met de privacywetgeving: de
+                Algemene Verordening Gegevensbescherming (AVG / GDPR). Daarnaast geef je ons toestemming om je gegevens
+                in MailChimp te verwerken conform het privacy beleid en de voorwaarden van Mailchimp. Lees hier ons
+                privacy statement.
+            </p>
+
+            <input type="checkbox">
+            <label for="akkoord">
+                Ja, ik meld me aan voor de e-mailnieuwsbrief en ik ga akkoord met het privacy statement
+            </label><br><br>
+
+            <input type="submit" name="aanmelden" value="Aanmelden"><br><br>
+
+            * = verplichte veld
         </form>
     </div>
+
+    <!-- NIEUWSBRIEF -->
+    <div page="NieuwsbriefAd.html"></div>
+
+    <!-- FOOTER -->
+    <div page="Footer.html"></div>
+    <script> includeHTML(); </script>
 </body>
 
 </html>
